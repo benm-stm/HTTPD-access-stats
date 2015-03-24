@@ -10,7 +10,7 @@ if [test $1 == "--help"]
 else
   endDate=$(date -d $3 +"%y%m%d")
   date=$(date -d $2 +"%y%m%d")
-  while [ $endDate -ge $date ]; do
+  while [ $endDate -ge $date ] do
     echo "${red}******************$1-20$date :********************${NC}"
     zcat $4/$1-20$date |cut -d ' ' -f 1|sort |uniq -c
     echo "===========> Number of users :"
